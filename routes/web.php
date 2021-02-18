@@ -25,11 +25,11 @@ Route::group(['prefix'=>'admin','middleware'=>['admin:admin']],function(){
 
 
 
-Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
+Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function () {
     return view('dashboard_admin');
 })->name('dashboard_admin');
 
 
-Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:web', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
